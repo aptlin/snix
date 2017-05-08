@@ -16,6 +16,10 @@
     symlinks:
       # - src: xmodmap
       #   dst: "{{ home }}/.xmodmap"
+      - src: gitconfig
+        dst: "{{ home }}/.gitconfig"
+      - src: gitignore
+        dst: "{{ xdg_config_home }}/gitignore"
   tasks:
     - name: configure nixos
       become: yes
