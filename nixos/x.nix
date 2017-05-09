@@ -16,6 +16,9 @@
       slock
       xautolock
 
+      #terminal emulators
+      rxvt_unicode-with-plugins
+      
       #xmonad
       dmenu
       compton
@@ -35,7 +38,6 @@
       opensans-ttf
       overpass
       oxygenfonts
-      helvetica-neue-lt-std
     ];
     fontconfig = { dpi = 227;
 		   defaultFonts.monospace = [ "Hack Regular" ];
@@ -44,15 +46,12 @@
 
   services.xserver = {
     enable = true;
-    # enable = false;
     layout = "dvorak,ru";
     xkbOptions = "ctrl:nocaps,grp:alt_space_toggle";
-    #windowManager.xmonad.enable = false;
     windowManager.xmonad.enable = true;
     windowManager.default = "xmonad";
     desktopManager.default = "none";
     windowManager.xmonad.enableContribAndExtras = true;
-    # windowManager.xmonad.enableContribAndExtras = false;
     displayManager = {
       auto = {
         enable = true;
@@ -61,9 +60,9 @@
     xserverArgs = [ "-dpi 227" ];
     sessionCommands = with pkgs; lib.mkAfter ''
         xbindkeys &
-	compton -b &
-	unclutter -idle 2
-	xautolock -time 10 -locker slock
+	#compton -b &
+	#unclutter -idle 2
+	#xautolock -time 10 -locker slock
         '';
     };
        
@@ -71,11 +70,7 @@
     libinput.naturalScrolling = false;
     libinput.middleEmulation = true;
     libinput.tapping = true;
-  
-                                   
-    # TODO: get rid of ~/.xmodmap and see if this works
-    xkbOptions = "ctrl:nocaps";
-
+  };
     #slock
 
     security.wrappers.slock.source = "${pkgs.slock}/bin/slock";
@@ -86,5 +81,4 @@
     ACTION=="add", SUBSYSTEM=="leds", RUN+="/run/current-system/sw/bin/chgrp input /sys/class/leds/%k/brightness"
     ACTION=="add", SUBSYSTEM=="leds", RUN+="/run/current-system/sw/bin/chmod g+w /sys/class/leds/%k/brightness"
     '';
-  };
 }

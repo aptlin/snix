@@ -7,7 +7,7 @@
     - colorschemes.yml
 
   vars:
-    become: false
+    become: yes
     colorscheme: "{{ colorscheme_solarized }}"
     ci: "{{ lookup('env', 'CI') | bool }}" # are we running in Travis?
     username: "{% if ci %}travis{% else %}aleph{% endif %}"

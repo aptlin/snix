@@ -3,17 +3,16 @@
 {
   imports = [
       ./audio.nix
+      ./haskell-packages.nix
+      ./python-packages.nix
       ./hardware-configuration.nix
       ./mail.nix
       ./networking.nix
-      ./packages.nix
-      ./security.nix
-      ./ssh.nix
-      ./steam.nix
-      ./systemd.nix
+      ./system-packages.nix
+      ./security.nix       
       ./users.nix
       ./x.nix
-      ./zsh.nix
+      ./sh.nix
   ];
 
   # Use the gummiboot efi boot loader.
@@ -66,7 +65,7 @@
   #services.chrony.enable = true;
   time.timeZone = "USA/Los_Angeles";
 
-  nix = {
+  nix = {g
     maxJobs = 4;
     buildCores = 4;
     gc.automatic = true;
