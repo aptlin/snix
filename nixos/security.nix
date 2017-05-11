@@ -6,7 +6,7 @@
   services.dnscrypt-proxy = {
     enable = true;
     resolverName = "cs-ru"; 
-    localPort = 4343;
+    localPort = 4343;		
   };
   services.unbound = {
     enable = true;

@@ -5,11 +5,12 @@
       ./audio.nix
       ./haskell-packages.nix
       ./python-packages.nix
+      ./image-editing-packages.nix
       ./hardware-configuration.nix
       ./mail.nix
       ./networking.nix
+      ./security.nix
       ./system-packages.nix
-      ./security.nix       
       ./users.nix
       ./x.nix
       ./sh.nix
@@ -65,12 +66,10 @@
   #services.chrony.enable = true;
   time.timeZone = "USA/Los_Angeles";
 
-  nix = {g
+  nix = {
     maxJobs = 4;
     buildCores = 4;
     gc.automatic = true;
     useSandbox = true;
-    # Use a local clone of nixpkgs at /etc/nixpkgs
-    #nixPath = [ "nixos-config=/etc/nixos/configuration.nix" "/home/siddharthist/code" ];
   };
 }

@@ -11,7 +11,7 @@
   security.sudo.enable = true;
 
   users = {
-    defaultUserShell = "/nix/var/nix/profiles/default/bin/zsh";
+    defaultUserShell = "/run/current-system/sw/bin/fish";
     groups = {
       aleph= {
         gid = 1000;
@@ -33,7 +33,7 @@
 		"input"
 		"wheel"
 		];
-        shell = "/run/current-system/sw/bin/zsh";
+        shell = "/run/current-system/sw/bin/fish";
 	subUidRanges = [
 	        { startUid = 100000; count = 65536; }
                 ];

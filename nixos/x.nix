@@ -31,10 +31,15 @@
     enableFontDir = true;
     enableGhostscriptFonts = true;
     fonts = with pkgs; [
-      # fira-code
+      dejavu_fonts
+      inconsolata
+      source-han-sans-japanese
+      source-han-sans-korean
+      source-han-sans-simplified-chinese
+      source-han-sans-traditional-chinese
+      ubuntu_font_family
       noto-fonts-emoji
       hack-font
-      #ubuntu-font-family
       opensans-ttf
       overpass
       oxygenfonts
@@ -73,12 +78,12 @@
   };
     #slock
 
-    security.wrappers.slock.source = "${pkgs.slock}/bin/slock";
-    services.udev.extraRules =
-    ''
-    ACTION=="add", SUBSYSTEM=="backlight", RUN+="/run/current-system/sw/bin/chgrp video /sys/class/backlight/%k/brightness"
-    ACTION=="add", SUBSYSTEM=="backlight", RUN+="/run/current-system/sw/bin/chmod g+w /sys/class/backlight/%k/brightness"
-    ACTION=="add", SUBSYSTEM=="leds", RUN+="/run/current-system/sw/bin/chgrp input /sys/class/leds/%k/brightness"
-    ACTION=="add", SUBSYSTEM=="leds", RUN+="/run/current-system/sw/bin/chmod g+w /sys/class/leds/%k/brightness"
-    '';
+    # security.wrappers.slock.source = "${pkgs.slock}/bin/slock";
+    # services.udev.extraRules =
+    # ''
+    # ACTION=="add", SUBSYSTEM=="backlight", RUN+="/run/current-system/sw/bin/chgrp video /sys/class/backlight/%k/brightness"
+    # ACTION=="add", SUBSYSTEM=="backlight", RUN+="/run/current-system/sw/bin/chmod g+w /sys/class/backlight/%k/brightness"
+    # ACTION=="add", SUBSYSTEM=="leds", RUN+="/run/current-system/sw/bin/chgrp input /sys/class/leds/%k/brightness"
+    # ACTION=="add", SUBSYSTEM=="leds", RUN+="/run/current-system/sw/bin/chmod g+w /sys/class/leds/%k/brightness"
+    # '';
 }

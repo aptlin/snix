@@ -1,4 +1,7 @@
 * SNIX -- modular NixOS configuration
+#+BEGIN_HTML
+<a href="https://travis-ci.org/sdll/SNIX"><img src="https://travis-ci.org/sdll/SNIX.svg?branch=master"></a>
+#+END_HTML
 
 - inspired by [[https://github.com/siddharthist/][siddharthist]]'s dots
 - NixOS configuration divided into thematic dotfiles

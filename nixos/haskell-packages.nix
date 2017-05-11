@@ -7,6 +7,7 @@
 	haskellPackages.ghc
 	haskellPackages.hlint
 	haskellPackages.stylish-haskell
+	haskellPackages.hledger
 	haskellPackages.hindent
 	stack
   ];
