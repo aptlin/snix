@@ -1,0 +1,14 @@
+* SNIX -- modular NixOS configuration
+
+- inspired by [[https://github.com/siddharthist/][siddharthist]]'s dots
+- NixOS configuration divided into thematic dotfiles
+- Ansible used for mild templating of colorschemes and symlinking
+
+** Installation
+
+To install, run
+
+#+BEGIN_SRC sh
+git clone https://github.com/sdll/SNIX; cd SNIX; ./run.sh
+#+END_SRC
+
