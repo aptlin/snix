@@ -13,6 +13,7 @@
     udevil
     stow
     curl
+    gnupg1
 
     #monitors	
     htop
@@ -35,7 +36,7 @@
     gitAndTools.gitFull        
 
     #devutils
-    busybox
+    
     psmisc
     gcc
     gnumake
@@ -50,9 +51,9 @@
     file
     pandoc
     libreoffice
+
+    pass
     
-    firefox
-    w3m-nox
     html2text
     gcc #
     ghc #

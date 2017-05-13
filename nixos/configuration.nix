@@ -3,6 +3,7 @@
 {
   imports = [
       ./audio.nix
+      ./browsing.nix
       ./haskell-packages.nix
       ./python-packages.nix
       ./image-editing-packages.nix

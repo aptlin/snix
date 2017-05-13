@@ -31,7 +31,7 @@
         path: /etc/nixos
         owner: "{{ username }}"
         group: "{{ username }}"
-        mode: 0660
+        mode: 0750
       when: "{{ (become | bool) and (not ci) }}"
 
     - name: make user symlink dirs

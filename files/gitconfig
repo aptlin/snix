@@ -1,6 +1,6 @@
 [user]
     name = Sasha Delly
-    email = sasha.delly@gmail.com
+    email = shura.sdll@gmail.com
 [core]
     autocrlf = input
     excludesfile = /home/aleph/.config/gitignore

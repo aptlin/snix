@@ -78,7 +78,7 @@
       xsel = "xsel -b";
       za = "zathura --fork";
       zz = "quit";
-
+      sa = "nix-shell -p python35Packages.notebook --run \"jupyter notebook\"";
       # Notes
       arb = "ec $BLOG_DIR/stories/arbeit.org ";
       snts = "pushd ~/DOTS/zsh/.scripts/;./notes;popd";

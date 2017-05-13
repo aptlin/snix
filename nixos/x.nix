@@ -65,7 +65,7 @@
     xserverArgs = [ "-dpi 227" ];
     sessionCommands = with pkgs; lib.mkAfter ''
         xbindkeys &
-	#compton -b &
+	compton -b &
 	#unclutter -idle 2
 	#xautolock -time 10 -locker slock
         '';
