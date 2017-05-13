@@ -57,7 +57,6 @@
     html2text
     gcc #
     ghc #
-    git
     gnupg
     imagemagick
     mpw

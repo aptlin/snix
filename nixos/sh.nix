@@ -8,11 +8,9 @@
     systemPackages = with pkgs; [
       direnv # automatically invoke/revoke a nix-shell
       fasd
-      zsh
-      fish
     ];
 
-    shellAliases = {
+     shellAliases = {
       cw = "sudo systemctl restart wpa_supplicant.service;sudo systemctl restart connman.service";
       sys = "sudo systemctl";
       sysu = "systemctl --user";
@@ -48,9 +46,9 @@
       gs = "git status";
       bud="ec $LEDGER_FILE";
       cp = "cp -r";
-      ec = "emacsclient -c --alternate-editor = ";
-      sec = "emacsclient -c --alternate-editor = ";
-      ce = "emacsclient -nw --alternate-editor = ";
+      ec = "emacsclient -c --alternate-editor= ";
+      sec = "emacsclient -c --alternate-editor= ";
+      ce = "emacsclient -nw --alternate-editor= ";
       ecc = "cd ~/.emacs.d;ec ~/.emacs.d/init.el";
       eco = "ec ~/.emacs.d/lisp/init-org.el";
       emac = "ec ~/.emacs.d/init.el";
@@ -112,7 +110,7 @@
       aug = "ec $BLOG_DIR/stories/agenda.org";
       mik = "ec $BLOG_DIR/stories/mikveh.org";
       we = "curl wttr.in";
-
+      gmor = "nix-shell -p python35Packages.pyperclip --run 'pushd ~/TMP/PROG/M/; ~/TMP/PROG/M/goodmorning.py; popd'";
       ni = "ec ~/DOTS/nixos/configuration.nix; sudo nixos-rebuild switch";
       nb = "sudo nixos-rebuild switch";
 
@@ -134,49 +132,7 @@
       LEDGER_FILE="$HOME/ORG/FINANCE/accounting.journal";
       XDG_CONFIG_HOME = "$HOME/.config";
       PATH = "$PATH:$HOME/.scripts";
-      EDITOR = "emacs";
+      EDITOR = "emacsclient --alternate-editor=";
       };
   };
-
-  # programs.zsh = {
-  #   enable = true;
-  #   enableCompletion = true;
-  #   #enableSyntaxHighlighting = true;
-
-  #   # custom prompt: "code > "
-  #   promptInit = ''
-  #     autoload -U promptinit && promptinit
-  #     autoload -U colors && colors
-  #     PROMPT="%{$fg_bold[0]%}%2~%  >%{$reset_color%} "
-  #   '';
-
-  #   # zshrc
-  #   interactiveShellInit = ''
-  #     # See NixOS/nix#1056
-  #     if [ -n "$IN_NIX_SHELL" ]; then
-  #       export TERMINFO=/run/current-system/sw/share/terminfo
-
-  #       # Reload terminfo
-  #       real_TERM=$TERM; TERM=xterm; TERM=$real_TERM; unset real_TERM
-  #     fi
-
-  #     eval "$(fasd --init posix-alias zsh-hook)"
-  #     if [[ -z $IN_NIX_SHELL ]]; then
-  #       eval "$(direnv hook zsh)"
-  #     fi
-  #     source_all() {[[ -d $1 ]] && for f in $1/*.zsh; do source "$f"; done; unset f;}
-  #     source_all $HOME/.zsh
-  #   '';
-  # };
-
-  programs.fish.enable = true;
-
-  # programs.bash = {
-  #   interactiveShellInit = ''
-  #     if [[ -z $IN_NIX_SHELL ]]; then
-  #       eval "$(direnv hook bash)"
-  #     fi
-  #     zsh; exit
-  #   '';
-  # };
 }

@@ -4,6 +4,7 @@
   imports = [
       ./audio.nix
       ./browsing.nix
+      ./communication.nix
       ./haskell-packages.nix
       ./python-packages.nix
       ./image-editing-packages.nix
@@ -19,7 +20,7 @@
 
   # Use the gummiboot efi boot loader.
   boot = {
-    supportedFilesystems = ["exfat" "btrfs" "ntfs" "vfat"];
+    supportedFilesystems = ["exfat" "ntfs" "vfat"];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -49,6 +50,8 @@
     consoleKeyMap = /home/aleph/DOTS/keymap/dvorak+.map.gz;
     defaultLocale = "en_US.UTF-8";
   };
+
+    system.autoUpgrade.channel = "https://nixos.org/channels/nixos-unstable/";
 
   services = {
     mbpfan.enable = true;

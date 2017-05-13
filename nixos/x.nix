@@ -23,7 +23,6 @@
       dmenu
       compton
       rofi
-      haskellPackages.xmonad
       haskellPackages.xmobar
   ];
 
@@ -51,7 +50,8 @@
 
   services.xserver = {
     enable = true;
-    layout = "dvorak,ru";
+    layout = "us,ru";
+    xkbVariant = "dvorak,";
     xkbOptions = "ctrl:nocaps,grp:alt_space_toggle";
     windowManager.xmonad.enable = true;
     windowManager.default = "xmonad";

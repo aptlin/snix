@@ -11,7 +11,7 @@
   security.sudo.enable = true;
 
   users = {
-    defaultUserShell = "/run/current-system/sw/bin/fish";
+    defaultUserShell = "/run/current-system/sw/bin/bash";
     groups = {
       aleph= {
         gid = 1000;
@@ -33,7 +33,7 @@
 		"input"
 		"wheel"
 		];
-        shell = "/run/current-system/sw/bin/fish";
+	shell = "/run/current-system/sw/bin/bash";
 	subUidRanges = [
 	        { startUid = 100000; count = 65536; }
                 ];
