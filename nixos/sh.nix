@@ -110,10 +110,10 @@
       aug = "ec $BLOG_DIR/stories/agenda.org";
       mik = "ec $BLOG_DIR/stories/mikveh.org";
       we = "curl wttr.in";
-      gmor = "nix-shell -p python35Packages.pyperclip --run 'pushd ~/TMP/PROG/M/; ~/TMP/PROG/M/goodmorning.py; popd'";
+      
       ni = "ec ~/DOTS/nixos/configuration.nix; sudo nixos-rebuild switch";
       nb = "sudo nixos-rebuild switch";
-
+      
 
       zac = "ec ~/.config/zathura/zathurarc";
   
