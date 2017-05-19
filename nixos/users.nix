@@ -10,6 +10,10 @@
   # List services that you want to enable:
   security.sudo.enable = true;
 
+  # Increase user's tmpfs size
+  services.logind.extraConfig =  "RuntimeDirectorySize=50%";
+
+  # Set up users
   users = {
     defaultUserShell = "/run/current-system/sw/bin/bash";
     groups = {
@@ -22,8 +26,7 @@
         isNormalUser = true;
 	home = "/home/aleph";
         createHome = true;
-	description = "Alexander Illarionov";
-        uid = 1000;
+	description = "Alexander Illarionov";                
 	group = "aleph";
 	extraGroups = [
 		"audio"

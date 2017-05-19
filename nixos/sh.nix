@@ -7,7 +7,7 @@
 
     systemPackages = with pkgs; [
       direnv # automatically invoke/revoke a nix-shell
-      fasd
+      fasd      
     ];
 
      shellAliases = {

@@ -14,11 +14,9 @@
       xclip
       unclutter
       slock
-      xautolock
 
       #terminal emulators
-      rxvt_unicode-with-plugins
-      
+      rxvt_unicode
       #xmonad
       dmenu
       compton
@@ -65,8 +63,8 @@
     xserverArgs = [ "-dpi 227" ];
     sessionCommands = with pkgs; lib.mkAfter ''
         xbindkeys &
-	compton -b &
-	#unclutter -idle 2
+	compton --benchmark -b --config /home/aleph/.config/compton.conf &
+	unclutter -idle 2 &
 	#xautolock -time 10 -locker slock
         '';
     };

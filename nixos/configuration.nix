@@ -21,6 +21,7 @@
   # Use the gummiboot efi boot loader.
   boot = {
     supportedFilesystems = ["exfat" "ntfs" "vfat"];
+    runSize = "35%";
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -71,8 +72,8 @@
   time.timeZone = "USA/Los_Angeles";
 
   nix = {
-    maxJobs = 4;
-    buildCores = 4;
+    maxJobs = 16;
+    buildCores = 0;
     gc.automatic = true;
     useSandbox = true;
   };

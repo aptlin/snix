@@ -9,6 +9,7 @@
 	haskellPackages.stylish-haskell
 	haskellPackages.hledger
 	haskellPackages.hindent
+	haskellPackages.hasktags
 	stack
   ];
 }
