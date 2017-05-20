@@ -12,6 +12,7 @@
       xbindkeys
       xfontsel
       xclip
+      xsel
       unclutter
       slock
 

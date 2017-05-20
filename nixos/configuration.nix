@@ -14,14 +14,15 @@
       ./security.nix
       ./system-packages.nix
       ./users.nix
+      ./user-packages.nix
       ./x.nix
       ./sh.nix
   ];
 
   # Use the gummiboot efi boot loader.
   boot = {
-    supportedFilesystems = ["exfat" "ntfs" "vfat"];
-    runSize = "35%";
+    earlyVconsoleSetup = true;
+    supportedFilesystems = ["exfat" "ntfs" "vfat"];    
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -57,9 +58,19 @@
   services = {
     mbpfan.enable = true;
     emacs.enable = true;
+    redshift.enable = true;
+    redshift.latitude = "55.75";
+    redshift.longitude = "37.52";
+    colord.enable = true;
+    printing = {
+      enable = true;
+      gutenprint = true;
+      drivers = [ pkgs.foo2zjs ];
+      };    
   };
   
   hardware = {
+    cpu.intel.updateMicrocode = true;
     bluetooth.enable = false;
     opengl = {
       driSupport = true;
@@ -69,12 +80,18 @@
   
   
   #services.chrony.enable = true;
-  time.timeZone = "USA/Los_Angeles";
+  time.timeZone = "Europe/Moscow";
 
   nix = {
     maxJobs = 16;
-    buildCores = 0;
-    gc.automatic = true;
+    buildCores = 0;    
     useSandbox = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+    };
+    extraOptions = ''
+      auto-optimise-store = true
+    '';
   };
 }
