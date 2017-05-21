@@ -17,6 +17,7 @@
 
     #monitors	
     htop
+    ncdu
 
     #networking
     iptables

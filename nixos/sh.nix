@@ -2,15 +2,16 @@
 
 {
   imports = [];
-
+  
+  programs.bash.enableCompletion = true;
+  
   environment = {
-
     systemPackages = with pkgs; [
       direnv # automatically invoke/revoke a nix-shell
       fasd      
     ];
 
-     shellAliases = {
+     shellAliases = {      
       cw = "sudo systemctl restart wpa_supplicant.service;sudo systemctl restart connman.service";
       sys = "sudo systemctl";
       sysu = "systemctl --user";
