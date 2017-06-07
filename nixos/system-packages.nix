@@ -33,6 +33,11 @@
     vim
     emacs
 
+    #view helpers
+    atool
+    highlight
+    mediainfo
+    
     #git
     gitAndTools.gitFull        
 

@@ -129,7 +129,8 @@
     variables = {
       LEDGER_FILE="$HOME/ORG/FINANCE/accounting.journal";
       XDG_CONFIG_HOME = "$HOME/.config";
-      EDITOR = "emacsclient --alternate-editor=";
+      EDITOR = "emacsclient -nw --alternate-editor=";
+      RANGER_LOAD_DEFAULT_RC = "FALSE";
       };
   };
 }
