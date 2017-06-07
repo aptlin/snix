@@ -53,7 +53,7 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-    system.autoUpgrade.channel = "https://nixos.org/channels/nixos-unstable/";
+    system.autoUpgrade.channel = "https://nixos.org/channels/nixos-17.03/";
 
   services = {
     mbpfan.enable = true;
@@ -83,13 +83,14 @@
   time.timeZone = "Europe/Moscow";
 
   nix = {
-    maxJobs = 16;
+    maxJobs = 32;
     buildCores = 0;    
     useSandbox = true;
     gc = {
       automatic = true;
       dates = "weekly";
     };
+    
     extraOptions = ''
       auto-optimise-store = true
     '';

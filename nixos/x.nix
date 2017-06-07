@@ -16,8 +16,8 @@
       unclutter
       slock
 
-      #terminal emulators
-      rxvt_unicode
+      #terminal emulators           
+      sakura
       #xmonad
       dmenu
       compton

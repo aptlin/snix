@@ -9,13 +9,8 @@
 
   # List services that you want to enable:
   security.sudo.enable = true;
-
-  # Increase user's tmpfs size
-  services.logind.extraConfig =  "RuntimeDirectorySize=50%";
-
   # Set up users
   users = {
-    defaultUserShell = "/run/current-system/sw/bin/bash";
     groups = {
       aleph= {
         gid = 1000;
@@ -36,7 +31,7 @@
 		"input"
 		"wheel"
 		];
-	shell = "/run/current-system/sw/bin/bash";
+
 	subUidRanges = [
 	        { startUid = 100000; count = 65536; }
                 ];

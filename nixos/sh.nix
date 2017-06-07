@@ -2,13 +2,10 @@
 
 {
   imports = [];
-  
-  programs.bash.enableCompletion = true;
-  
+    
   environment = {
     systemPackages = with pkgs; [
-      direnv # automatically invoke/revoke a nix-shell
-      fasd      
+      tldr      
     ];
 
      shellAliases = {      
@@ -132,7 +129,6 @@
     variables = {
       LEDGER_FILE="$HOME/ORG/FINANCE/accounting.journal";
       XDG_CONFIG_HOME = "$HOME/.config";
-      PATH = "$PATH:$HOME/.scripts";
       EDITOR = "emacsclient --alternate-editor=";
       };
   };
