@@ -54,19 +54,19 @@
   };
 
     system.autoUpgrade.channel = "https://nixos.org/channels/nixos-17.03/";
-
-  services = {
-    mbpfan.enable = true;
-    emacs.enable = true;
-    redshift.enable = true;
-    redshift.latitude = "55.75";
-    redshift.longitude = "37.52";
-    colord.enable = true;
-    printing = {
-      enable = true;
-      gutenprint = true;
-      drivers = [ pkgs.foo2zjs ];
-      };
+    system.autoUpgrade.enable = true;
+    services = {
+      mbpfan.enable = true;
+      emacs.enable = true;
+      redshift.enable = true;
+      redshift.latitude = "55.75";
+      redshift.longitude = "37.52";
+      colord.enable = true;
+      printing = {
+        enable = true;
+        gutenprint = true;
+        drivers = [ pkgs.foo2zjs ];
+        };
       };
 
   hardware = {

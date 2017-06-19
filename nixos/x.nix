@@ -97,7 +97,7 @@ in
         xbindkeys &
         compton --benchmark -b --config /home/aleph/.config/compton.conf &
         unclutter -idle 2 &
-        #xautolock -time 10 -locker slock
+        xautolock -time 10 -locker slock
         '';
     };
 
