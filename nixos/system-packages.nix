@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [];          
+  imports = [];
   environment.systemPackages = with pkgs; [
     wget
     silver-searcher
@@ -15,7 +15,7 @@
     curl
     gnupg1
 
-    #monitors	
+    #monitors
     htop
     ncdu
 
@@ -24,32 +24,42 @@
     nmap
     tcpdump
     dhcp
-    cmst            
+    cmst
 
     #sync
-    syncthing        
+    syncthing
 
     #editors
     vim
     emacs
 
+    # c-code
+    global
+    clang
+    bear
+    irony-server
+
     #view helpers
     atool
     highlight
     mediainfo
-    
+
+    #notifications
+    libnotify
+    dunst
+
     #git
-    gitAndTools.gitFull        
+    gitAndTools.gitFull
 
     #devutils
-    
+
     psmisc
     gcc
     gnumake
     automake
     nix
     nox
-    
+
     #files
     zip
     unzip
@@ -59,7 +69,7 @@
     libreoffice
 
     pass
-    
+
     html2text
     gcc #
     ghc #
@@ -77,5 +87,6 @@
 
     #screenshot
     gnome3.gnome-screenshot
-  ];
+
+     ];
 }

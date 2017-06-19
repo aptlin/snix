@@ -22,7 +22,7 @@
   # Use the gummiboot efi boot loader.
   boot = {
     earlyVconsoleSetup = true;
-    supportedFilesystems = ["exfat" "ntfs" "vfat"];    
+    supportedFilesystems = ["exfat" "ntfs" "vfat"];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -66,9 +66,9 @@
       enable = true;
       gutenprint = true;
       drivers = [ pkgs.foo2zjs ];
-      };    
-  };
-  
+      };
+      };
+
   hardware = {
     cpu.intel.updateMicrocode = true;
     bluetooth.enable = false;
@@ -77,20 +77,20 @@
       driSupport32Bit = true;
     };
   };
-  
-  
+
+
   #services.chrony.enable = true;
   time.timeZone = "Europe/Moscow";
 
   nix = {
     maxJobs = 32;
-    buildCores = 0;    
+    buildCores = 0;
     useSandbox = true;
     gc = {
       automatic = true;
       dates = "weekly";
     };
-    
+
     extraOptions = ''
       auto-optimise-store = true
     '';
